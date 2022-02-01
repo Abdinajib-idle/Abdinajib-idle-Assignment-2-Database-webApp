@@ -1,0 +1,130 @@
+< !DOCTYPE html >
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.css"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cmpt276Assignment1</title>
+</head>
+<body>
+
+    <section id="thisContainer">
+        <h3>Grade Calculator</h3>
+        <div class="main">
+            <p class="top-text"><b>Activities</b></p>
+            <p>Give grades to the numberic activities</p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Short Name</th>
+                        <th>Weight</th>
+                        <th>Grade</th>
+                        <th>Percentage</th>
+                    </tr>
+                </thead>
+                <!--Row 1-->
+                <tbody id="tbody">
+                    <tr id="table-rows">
+                        <td>Activity 1</td>
+                        <td>A1</td>
+                        <td class="inputData">
+                            <input id="weighted1" name="weighted" type="number" min=0>
+                        </td>
+                        <td onchange="calculatePercentage(1)" class="inputData">
+                            <input id="currentg1" type="number" min=0>
+                            /
+                            <input type="number" id="overall1" min=0></input>
+                        </td>
+
+                        <td>
+                            <label name="percentage" type="text">
+                                <p id="percentage1"></p>
+                            </label>
+                        </td>
+                        </td>
+                    </tr>
+                    <!--Row 2-->
+                    <tr id="table-rows">
+                        <td>Activity 2</td>
+                        <td>A2</td>
+                        <td class="inputData">
+                            <input id="weighted2" name="weighted" type="number" min=0>
+                        </td>
+                        <td onchange="calculatePercentage(2)" class="inputData">
+                            <input id="currentg2" type="number" min=0>
+                            /
+                            <input type="number" id="overall2" min=0></input>
+                        </td>
+
+                        <td>
+                            <label name="Tpercentage" type="text">
+                                <p id="percentage2"></p>
+                            </label>
+                        </td>
+                        </td>
+                    </tr>
+
+                    <!--Row 3-->
+                    <tr id="table-rows">
+                        <td>Activity 3</td>
+                        <td>A3</td>
+                        <td class="inputData">
+                            <input id="weighted3" name="weighted" type="number" min=0>
+                        </td>
+                        <td onchange="calculatePercentage(3)" class="inputData">
+                            <input id="currentg3" type="number" min=0>
+                            /
+                            <input type="number" id="overall3" min=0></input>
+                        </td>
+
+                        <td>
+                            <label name="Tpercentage" type="text">
+                                <p id="percentage3"></p>
+                            </label>
+                        </td>
+                        </td>
+                    </tr>
+                    <!--Row 4-->
+                    <tr id="table-rows">
+                        <td>Activity 4</td>
+                        <td>A4</td>
+                        <td class="inputData">
+                            <input id="weighted4" name="weighted" type="number" min=0>
+                        </td>
+                        <td onchange="calculatePercentage(4)" class="inputData">
+                            <input id="currentg4" type="number" min=0>
+                            /
+                            <input type="number" id="overall4" min=0></input>
+                        </td>
+
+                        <td>
+                            <label name="Tpercentage" type="text">
+                                <p id="percentage4"></p>
+                            </label>
+                        </td>
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+            <br>
+            <button id="Add-activity-btn">Add activity</button>
+            <br>
+            <label for="result">
+                <p class="top-text" id="outPutLabel"><b>Result</b></p>
+            </label>
+            <br>
+            <button name="weightedBtn" id="weightedBtn" class="bottomr">Weighted</button>
+            <button name="meanbtn" id="meanbtn" class="bottomr">Mean</button>
+
+        </div>
+    </section>
+
+
+</body>
+</html>
