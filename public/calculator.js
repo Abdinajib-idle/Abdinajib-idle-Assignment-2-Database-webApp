@@ -23,17 +23,17 @@ rowAdder.addEventListener('click', function appendNewRow() {
     let Trs = document.createElement("table-rows");
 
     let templateRow = `
-<tr id="table-rows">
+<tr class="table-rows">
 <td>Activity`+ counter + `</td>
     <td>\ A`+ counter + `\ </td>
     <td class="inputData"><input id="weighted`+ counter + `" name="weighted" type="number" min=0>
     </td>
     <td onchange="calculatePercentage(`+ counter + `)" class="inputData">
-    <input id="currentg`+ counter + `" type="number" min=0> 
-    / 
+    <input id="currentg`+ counter + `" type="number" min=0>
+    /
     <input type="number" id="overall`+ counter + `" min=0></input>
     </td>
-    
+   
     <td>
         <label name="Tpercentage" type="text" >
             <p id="percentage`+ counter + `"></p>
@@ -101,5 +101,3 @@ weight_Calc.addEventListener('click', function calculateWeight() {
 window.onload = function () {
     setInterval(50000, 1000);
 }
-
-
