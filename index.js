@@ -16,24 +16,25 @@ var app =express()
 
   app.get('/database',(req,res)=>{
 
-    var getUsersQuery = `SELECT * FROM Rectangles`;
-    pool.query(getUsersQuery, (error,result) => {
-        if (error) 
-            res.end(error)
-            var results={'rows':result.rows}
-            res.render('pages/db',results)
-    })
+    // var getUsersQuery = `SELECT * FROM Rectangles`;
+    // pool.query(getUsersQuery, (error,result) => {
+    //     if (error) 
+    //         res.end(error)
+    //         var results={'rows':result.rows}
+    //         res.render('pages/db',results)
+    // })
     
-//    try {
-//        const result = await pool.query(`SELECT * FROM Rectangles`);
-//        const data = { results : result.rows };
-//        res.render('pages/db', data);
-//    }
-//    catch (error) {
-//         res.end(error);
-//    }
-    
-})
+    try {
+        const result = await pool.query(`SELECT * FROM Rectangles`);
+        const data = { results : result.rows };
+        res.render('pages/db', data);
+    }
+    catch (error) {
+         res.end(error);
+    }
+     
+ })
+ 
 
 
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
