@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 5000
 const { Pool } = require('pg');
 var pool;
 pool = new Pool({
-  connectionString:process.env.DATABASE_URL
+  connectionString:process.env.DATABASE_URL //|| "postgres://postgres:Postgress@localhost/Recs"
 })
 
 var app =express()
@@ -14,16 +14,7 @@ var app =express()
   app.get('/', (req, res) => res.render('pages/index'))
   
 
-  app.get('/database', async(req,res)=>{
-
-    // var getUsersQuery = `SELECT * FROM Rectangles`;
-    // pool.query(getUsersQuery, (error,result) => {
-    //     if (error) 
-    //         res.end(error)
-    //         var results={'rows':result.rows}
-    //         res.render('pages/db',results)
-    // })
-    
+  app.get('/database', async (req,res)=>{
     try {
         const result = await pool.query(`SELECT * FROM Rectangles`);
         const data = { results : result.rows };
