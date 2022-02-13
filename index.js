@@ -15,7 +15,7 @@ var app =express()
   
 
   app.get('/database',(req,res)=>{
-    var getUsersQuery = `SELECT * FROM users`;
+    var getUsersQuery = `SELECT * FROM rectangles`;
     pool.query(getUsersQuery, (error,result) => {
         if (error) {
             res.end(error)
