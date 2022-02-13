@@ -27,7 +27,7 @@ var app =express()
     })
     */
    try {
-       const result = await pool.query(`SELECT * FROM users`);
+       const result = await pool.query(`SELECT * FROM Rectangles`);
        const data = { results : result.rows };
        res.render('pages/db', data);
    }
