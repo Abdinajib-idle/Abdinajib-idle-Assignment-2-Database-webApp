@@ -16,9 +16,8 @@ app.use(express.urlencoded({extended:false}))
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.get('/', (req, res) => res.render('pages/index'))
-app.get('/database', async (req,res)=>{
-    /*
-    var getUsersQuery = `SELECT * FROM users`;
+app.get('/database',(req,res)=>{
+    var getUsersQuery = `SELECT * FROM rectangles`;
     pool.query(getUsersQuery, (error,result) => {
         if (error) {
             res.end(error)
@@ -29,15 +28,8 @@ app.get('/database', async (req,res)=>{
             res.render('pages/db', data);
         }
     })
-    */
-   try {
-       const result = await pool.query(`SELECT * FROM Rectangles`);
-       const data = { results : result.rows };
-       res.render('pages/db', data);
-   }
-   catch (error) {
-        res.end(error);
-   }
+    
+   
     
 })
 
