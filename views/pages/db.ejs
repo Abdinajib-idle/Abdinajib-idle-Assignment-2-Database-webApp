@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="/css/rectangles.css">
   <%- include ("../partials/header.ejs") %>
 </head>
 
@@ -8,16 +9,35 @@
 
 <%- include ("../partials/nav.ejs") %>
 
+
 <div class="container">
 <h2>Database Results</h2>
 
-<ul>
-    <% Results.forEach(function(r) { %>
-        <li><%= r.name %></li>
+<table class="myT">
+<thead>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Colour</th>
+  </thead>
+  <tbody>
+    
+    <% results.forEach(function(r) { %>
+      <tr>
+        <td><%= r.uid %></td>
+        <td id="nameHolder"><a href="/getData<%= r.uid %>"><%= r.name %></a></td>
+        <td><%= r.color %></td>
+      </tr>
     <% }); %>
-</ul>
+  
+
+  </tbody>
+</div>
+<div class=".form">
+<button name="addNew" class="add-Btn"><a href="/html/addingForm.html">ADD </a></button>
+<!-- <button name="addNew" class="delete-Btn">DELETE</button> -->
 
 </div>
+<script src="/javascript/rectangles.js"></script>
 
 </body>
 </html>

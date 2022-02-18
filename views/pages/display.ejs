@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/rectangles.css">
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+
+<%- include ("../partials/nav.ejs") %>
+
+<table>
+<div class="container">
+  <form form action="/updateChanges<%= rows[0].uid %>" method="post">
+<h2>Viewing singl Rectangle</h2>
+<thead>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Width</th>
+          <th>Height</th>
+          <th>Colour</th>
+  </thead>
+  <tbody>
+    <% rows.forEach(function(r) { %>
+      <tr>
+        <td><input name="uid" disabled value="<%= r.uid %>"/></td>
+        <td><input type="text" name="name"value=<%= r.name %>></td>
+        <td><input type="text" name="width"value=<%= r.width %>></td>
+        <td><input type="text" name="height"value=<%= r.height %>></td>
+        <td><input type="text" name="color"value=<%= r.color %>></td>
+      </tr>
+    <% }); %>
+  </tbody>
+
+</div>
+<div class=".form">
+<button name="back" class="ret" onclick="goBack()">return to database</button>
+<button name="updateInfo" id="update" type="submit">update changes</button>
+</form>
+</div>
+<form action="/delete<%= rows[0].uid %>" method="post">
+  <button name="erase" id="delete-Btn" type="submit">Delete</button>
+</form>
+</table>
+<h2><%= rows[0].name %></h2>
+<!--I have added import property to override the table blocking to set the dimensions and colour-->
+<div id="rectangle" style="width: <%= rows[0].width %>px!important; height: <%= rows[0].height %>px!important; background-color: <%= rows[0].color %>"></div>
+<script src="/javascript/rectangles.js"></script>
+
+</body>
+</html>

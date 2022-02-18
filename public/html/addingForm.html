@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/rectangles.css">
+ 
+</head>
+
+<body>
+<div class="container">
+<h2>Adding new rectangle </h2>
+<h1>Please enter valid/supported color names only!</h1>
+<h1>whatever colour-name you provide will be used as a back-ground for that rectangle</h1>
+<h1>I could provide a list but it would be limiting user choice</h1>
+
+
+<form action="/addNewRectangle" method="post">
+    <button type="cancel" value="back" onclick="goBack()">return to the database</button>
+    <fieldset>Adding a rectangle
+    <legend>Rectangle info:</legend>
+    
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Color</th>
+            <!--I could provide a list of colors to choose from when adding a new rectangle but my list would limit the user choice-->
+            <!--Using framewoks would also be an overkill for this assignment-->
+            <!--I am assuming that users will able to input supported colour names-->
+        </thead>
+            <tbody>
+                <tr>
+                    <td>
+                <input name="uid" type="number" id="uid" min=1 required>
+            </td>
+            <td>
+                <input name="name" type="text" id="name"  required>
+            </td>
+            <td>
+                <input name="width" type="number" min=0 id="width" required>
+            </td>
+            <td>
+                <input name="height" type="number" min=0 id="height" required>
+            </td>
+            <td>
+                <input name="color" type="text" id="color"required>
+            </td>
+            </tr>
+            </tbody>
+
+        </fieldset>
+</table>
+<button type="submit" value="submit">Submit</button>
+
+</form>
+</div>
+
+
+
+</div>
+<script src="/javascript/rectangles.js"></script>
+</body>
+</html>

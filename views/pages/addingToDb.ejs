@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/css/rectangles.css">
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+
+<%- include ("../partials/nav.ejs") %>
+
+
+<div class="container">
+<h2>Database Results</h2>
+<form action="post">
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Width</th>
+            <th>Height</th>
+            <th>Color</th>
+    <% results.forEach(function(r) { %>
+     
+        <%= r.ID %>
+        <%= r.ID %>
+        <%= r.ID %>
+
+    <% }); %>
+  
+</table>
+</form>
+</div>
+
+
+
+</div>
+</body>
+</html>
