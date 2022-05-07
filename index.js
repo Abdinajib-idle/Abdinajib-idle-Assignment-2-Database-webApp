@@ -3,7 +3,6 @@ const express = require('express')
 const path = require('path')
 const PORT = process.env.PORT || 5000
 
-<<<<<<< HEAD
 var app = express()
 
 const { Pool } = require('pg');
@@ -110,11 +109,3 @@ app.post('/delete:id', async (req, res) => {
 
 
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
-=======
-var app=express()
-app.use(express.static(path.join(__dirname, 'public')))
-app.set('views', path.join(__dirname, 'views'))
-app.set('view engine', 'ejs')
-app.get('/', (req, res) => res.render('pages/index'))
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
->>>>>>> 703266770ab40531f62a660932c19165709ce46b
